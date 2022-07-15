@@ -26,3 +26,10 @@ print('Cześć {}! Masz {} lat.'.format(name, age))
 # %% funkcja input podaje wartości jako tekst
 age_2 = input('Podaj wiek: ') # tutaj będzie zmienna str
 age_3 = int(input('Podaj wiek: '))
+
+# %%
+x = '1323435'
+y = 12334
+z = '0'
+
+print('x: {0}\ny: {1}\nz: {2}'.format(type(x), type(y), type(z)))
