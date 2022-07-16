@@ -54,3 +54,16 @@ A.intersection(B) # pokazuje tylko elemety wspólne
 A.symmetric_difference(B) # wyłacza tylko elementy wspólne
 
 D = A.copy()
+
+
+# %%
+x = 'Programowanie w języku Python - od A do Z'
+x.lower()
+x.replace("-","")
+x.replace(" ","")
+x.replace("ę","e")
+set(x)
+len(set(x))
+len(set(x.lower()))
+y = len(set(x.lower().replace("-","").replace(" ","").replace("ę","e")))
+print(y)
