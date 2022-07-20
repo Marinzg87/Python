@@ -127,5 +127,47 @@ if not default_flag: # można dopisać == True, ale jest to zbędne
 else:
     print('Doszło do defaultu')
     
+# %%
+saldo = 10000
+klient_zwweryfikowany = True
 
+if saldo > 0 and klient_zwweryfikowany:
+    print('Możesz wypłacić gotówkę.')
+else:
+    print('Nie możesz wypłacić gotówki.')
     
+# %%
+saldo = 10000
+klient_zwweryfikowany = True
+
+amount = int(input('Ile chcesz wypłacić gotówki: '))
+
+if saldo > 0 and klient_zwweryfikowany and (saldo - amount) > 0:
+    print('Możesz wypłacić gotówkę.')
+else:
+    print('Nie możesz wypłacić gotówki. \
+Brak wystarczającej kwoty {}'.format(abs(saldo - amount))) # abs - zwróci wartość bezwzględną
+
+# %%
+name = 'python'
+
+if 'p' in name:
+    print('Znaleziono p')
+else:
+    print('Nie znaleziono p')
+    
+# %%
+tech = 'python'
+if tech == 'python':
+    flag = 'Dobry wybór.'
+else:
+    flag = 'Poszukaj czegoś lepszego.'
+    
+# %%
+# x if [warunek] else y
+tech = 'sas'
+flag = 'Dobry wybór.' if tech == 'python' else 'Poszukaj czegoś lepszego.'
+
+# %%
+tech = 'python'
+'Dobry wybór.' if tech == 'python' else 'Poszukaj czegoś lepszego.'
