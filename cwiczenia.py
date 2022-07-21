@@ -67,3 +67,18 @@ if len(ps) > 10:
 else:
     print('Hasło niepoprawne')
 
+# %%
+list = [1,2,99,4,5]
+for char in list:
+    if char == 99:
+        continue
+    print(char)
+    
+# %%
+numbers = [23,12,53,13,65,1,45]
+i = 0
+while i < len(numbers):
+    if numbers[i] == 13:
+        print('Znaleziono.')
+        break
+    i += 1
