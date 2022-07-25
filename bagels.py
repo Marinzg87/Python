@@ -54,3 +54,47 @@ wskazówka będzie brzmieć Fermi Piko.'''.format(NUM_DIGITS))
         if not input('> ').lower().startswith('t'):
             break
     print('Dziękuję za grę!')
+
+
+def getSecretNum():
+    """Zwraca liczbę złożoną z tylu losowych, unikatowych cyfr, ile wynosi wartość NUM_DIGITS."""
+    numbers = list('0123456789')  # Utwórz listę cyfr od 0 do 9.
+    random.shuffle(numbers)  # Ustaw je w losowej kolejności.
+
+    # Dodaj kolejne cyfry do tajemnej liczby:
+    secretNum = ''
+    for i in range(NUM_DIGITS):
+        secretNum += str(numbers[i])
+    return secretNum
+
+
+def getClues(guess, secretNum):
+    """Zwraca łańcuch zanków piko, fermi, bajgle dla danej próby
+    lub informację o wygranej."""
+
+
+if guess == getSecretNum:
+    return 'Udało się!'
+
+clues = []
+
+for i in range(len(guess)):
+    if guess[i] == secretNum[i]:
+        # Poprawna cyfra w odpowiednim miejscu.
+        clues.append('Fermi')
+    elif guess[i] in getSecretNum:
+        # Poprawna cyfra w złym miejscu.
+        clues.append('Piko')
+if len(clues) == 0:
+    return 'Bajgle'  # Brak poprawnych cyfr.
+else:
+    # Ustaw wskazówki w kolejności alfabetycznej.
+    # by ich kolejność nie zdradzała zbyt wiele informacji.
+    clues.sort()
+    # Wszystkie wskazówki połącz w jeden łańcuch znaków.
+    return ' '.join(clues)
+
+
+# Jeśli program został uruchomiony (a nie zaimportowwany), uruchom grę:
+if __name__ == ' __main__':
+    main()
