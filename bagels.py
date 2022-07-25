@@ -71,28 +71,26 @@ def getSecretNum():
 def getClues(guess, secretNum):
     """Zwraca łańcuch zanków piko, fermi, bajgle dla danej próby
     lub informację o wygranej."""
+    if guess == getSecretNum:
+        return 'Udało się!'
 
+    clues = []
 
-if guess == getSecretNum:
-    return 'Udało się!'
-
-clues = []
-
-for i in range(len(guess)):
-    if guess[i] == secretNum[i]:
-        # Poprawna cyfra w odpowiednim miejscu.
-        clues.append('Fermi')
-    elif guess[i] in getSecretNum:
-        # Poprawna cyfra w złym miejscu.
-        clues.append('Piko')
-if len(clues) == 0:
-    return 'Bajgle'  # Brak poprawnych cyfr.
-else:
-    # Ustaw wskazówki w kolejności alfabetycznej.
-    # by ich kolejność nie zdradzała zbyt wiele informacji.
-    clues.sort()
-    # Wszystkie wskazówki połącz w jeden łańcuch znaków.
-    return ' '.join(clues)
+    for i in range(len(guess)):
+        if guess[i] == secretNum[i]:
+            # Poprawna cyfra w odpowiednim miejscu.
+            clues.append('Fermi')
+        elif guess[i] in getSecretNum:
+            # Poprawna cyfra w złym miejscu.
+            clues.append('Piko')
+    if len(clues) == 0:
+        return 'Bajgle'  # Brak poprawnych cyfr.
+    else:
+        # Ustaw wskazówki w kolejności alfabetycznej.
+        # by ich kolejność nie zdradzała zbyt wiele informacji.
+        clues.sort()
+        # Wszystkie wskazówki połącz w jeden łańcuch znaków.
+        return ' '.join(clues)
 
 
 # Jeśli program został uruchomiony (a nie zaimportowwany), uruchom grę:
